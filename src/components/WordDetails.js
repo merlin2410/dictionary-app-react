@@ -2,8 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const WordDetails = ({ match }) => {
-  const { word } = match.params;
+
+  if(match!==undefined){
+    const { word } = match.params;
+  }
+        
+  
   const { wordDetails, loading } = useSelector((state) => state.word);
+  console.log(wordDetails);
 
   if (loading) {
     return <div>Loading...</div>;

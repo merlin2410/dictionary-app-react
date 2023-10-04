@@ -8,8 +8,7 @@ const SearchBar = ()=>{
     const [word, setWord] = useState("");
     const dispatch = useDispatch();
 
-    const wordDetails = useSelector(state=>state.word);
-    console.log(wordDetails); 
+    
 
     const handleSearch = () => {
         if (word.trim() !== "") {
