@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchWordDetails } from "../redux/actions/wordActions";
+import { addToHistory } from "../redux/actions/historyActions";
 
 
 const SearchBar = ()=>{
@@ -13,6 +14,7 @@ const SearchBar = ()=>{
     const handleSearch = () => {
         if (word.trim() !== "") {
           dispatch(fetchWordDetails(word));
+          dispatch(addToHistory(word));
         }
       };
 

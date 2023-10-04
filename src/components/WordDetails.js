@@ -1,14 +1,28 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { fetchWordDetails } from "../redux/actions/wordActions";
 
 const WordDetails = ({ match }) => {
 
+    const dispatch = useDispatch();
+
+    const handleSearch = (word) => {
+        if (word.trim() !== "") {
+          dispatch(fetchWordDetails(word));
+          
+        }
+      };
+
+const { wordDetails, loading } = useSelector((state) => state.word);
   if(match!==undefined){
+    
+    
     const { word } = match.params;
+    handleSearch(word);
   }
         
   
-  const { wordDetails, loading } = useSelector((state) => state.word);
+ 
   console.log(wordDetails);
 
   if (loading) {
