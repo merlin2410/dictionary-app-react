@@ -16,7 +16,7 @@ function App() {
       
       <Routes>
         <Route path="/" Component={HomePage}/>
-        <Route path="/home" Component={HomePage}/>
+        {/* <Route path="/home" Component={HomePage}/> */}
         <Route path="/history" Component={History}/>
         <Route path="/word/:word" Component={WordDetails} />
       </Routes>
