@@ -24,6 +24,12 @@ code {
 .NavBar .right-nav{
   display: flex;
   gap: 30px;
+  align-items: center;
+}
+
+.NavBar .right-nav a{
+  color: white;
+  text-decoration: none;
 }
 
 .SearchBar{
@@ -50,4 +56,9 @@ code {
   color: white;
   font-size: large;
   border: none;
+}
+
+.WordDetails{
+  padding: 30px;
+  margin: 30px;
 }
