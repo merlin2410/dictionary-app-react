@@ -41,7 +41,7 @@ const { wordDetails, loading } = useSelector((state) => state.word);
 
             
             return(
-                <div>
+                <div className="output-section">
                     <h2>{obj.word}</h2>
                     {
                         obj.phonetics.map((phone)=>{

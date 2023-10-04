@@ -62,3 +62,10 @@ code {
   padding: 30px;
   margin: 30px;
 }
+
+.WordDetails .output-section{
+  border-bottom: black;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  
+}
