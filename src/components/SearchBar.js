@@ -1,12 +1,15 @@
 import React, {useState} from "react";
-import { useDispatch } from "react-redux";
-import { fetchWordDetails } from "../redux/actionsTypes/wordActions";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchWordDetails } from "../redux/actions/wordActions";
 
 
 const SearchBar = ()=>{
     
     const [word, setWord] = useState("");
-    const dispatch = useDispatch;
+    const dispatch = useDispatch();
+
+    const wordDetails = useSelector(state=>state.word);
+    console.log(wordDetails); 
 
     const handleSearch = () => {
         if (word.trim() !== "") {

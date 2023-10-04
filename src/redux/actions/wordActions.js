@@ -1,6 +1,6 @@
 
 import axios from "axios";
-import store from "../store"
+
 
 export const fetchWordStart = () => {
   return {
@@ -23,15 +23,17 @@ export const fetchWordFailure = () => {
 
 export const fetchWordDetails = (word) => {
   return (dispatch) => {
-    store.dispatch(fetchWordStart());
+    dispatch(fetchWordStart());
 
     axios
       .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${word}`)
       .then((response) => {
-        store.dispatch(fetchWordSuccess(response.data));
+        dispatch(fetchWordSuccess(response.data));
+        console.log(response.data);
       })
       .catch((error) => {
-        store.dispatch(fetchWordFailure());
+        dispatch(fetchWordFailure());
+        console.log("failed")
       });
   };
 };

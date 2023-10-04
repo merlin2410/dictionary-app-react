@@ -14,6 +14,7 @@ function App() {
       <NavBar/>
       <Routes>
         <Route path="/" Component={SearchBar}/>
+        <Route path="/home" Component={SearchBar}/>
         <Route path="/history" Component={History}/>
         <Route path="/word/:word" Component={WordDetails} />
       </Routes>
